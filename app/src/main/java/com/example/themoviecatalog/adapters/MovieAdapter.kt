@@ -43,7 +43,6 @@ class MovieAdapter (private val movieList : ArrayList<MovieEntity>, private val 
 
         val tvMovieName : TextView = itemView.findViewById(R.id.tvMovieName)
         val ivMovieSnapshot : ImageView = itemView.findViewById(R.id.ivMovieSnapshot)
-
         init {
             ivMovieSnapshot.setOnClickListener{
                 listenerMovie.onMovieImageClick(adapterPosition)
