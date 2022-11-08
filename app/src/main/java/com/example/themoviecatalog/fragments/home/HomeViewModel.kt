@@ -1,6 +1,7 @@
 package com.example.themoviecatalog.fragments.home
 
 import android.util.Log
+import com.example.themoviecatalog.BuildConfig
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -35,7 +36,7 @@ class HomeViewModel @Inject constructor ( private val movieRepository: MovieRepo
     fun getMoviesFromApi ( ) {
         viewModelScope.launch(Dispatchers.IO) {
             val page = appPreferences.getLastRequestedPage()!! + 1
-            val result = retrofit.create(ApiService::class.java).discoverMovies(apiKey = "5097ab2a9ee82ca445448fc76511aae4", language = "en-US", page = page.toString())
+            val result = retrofit.create(ApiService::class.java).discoverMovies(apiKey = BuildConfig.TMDB_API_KEY, language = "en-US", page = page.toString())
             val discoverInfo = result.body()
             if (result.isSuccessful){
                 appPreferences.setLastRequestedPage(page)

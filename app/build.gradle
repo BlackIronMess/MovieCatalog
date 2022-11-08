@@ -20,6 +20,7 @@ android {
 
         buildConfigField("String", "TMDB_API_BASE_URL", '"https://api.themoviedb.org/3/"')
         buildConfigField("String", "TMDB_API_IMAGES_BASE_URL", '"https://image.tmdb.org/t/p/"')
+        buildConfigField("String", "TMDB_API_KEY", '"5097ab2a9ee82ca445448fc76511aae4"')
 
     }
 
